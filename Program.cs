@@ -9,7 +9,6 @@ namespace Quest
     {
         static void Main(string[] args)
         {
-            
             Robe newRobe = new Robe() {Length = 7, Colors = new List<string> {"Red", "Green", "Yellow", "Whatever"} };
             Hat newHat = new Hat() {ShininessLevel = 6};
 
@@ -17,6 +16,8 @@ namespace Quest
             Console.WriteLine("What is your Name?");
             Adventurer theAdventurer = new Adventurer(Console.ReadLine(), newRobe, newHat);
             Console.WriteLine(theAdventurer.getDescription());
+
+            Prize newPrize = new Prize("Here's your Prize");
 
             // Create a few challenges for our Adventurer's quest
             // The "Challenge" Constructor takes three arguments
@@ -92,16 +93,19 @@ namespace Quest
                 if (theAdventurer.Awesomeness >= maxAwesomeness)
                 {
                     Console.WriteLine("YOU DID IT! You are truly awesome!");
+                    newPrize.ShowPrize(theAdventurer);
                     playAgainQuestion();
                 }
                 else if (theAdventurer.Awesomeness <= minAwesomeness)
                 {
                     Console.WriteLine("Get out of my sight. Your lack of awesomeness offends me!");
+                    newPrize.ShowPrize(theAdventurer);
                     playAgainQuestion();
                 }
                 else
                 {
                     Console.WriteLine("I guess you did...ok? ...sorta. Still, you should get out of my sight.");
+                    newPrize.ShowPrize(theAdventurer);
                     playAgainQuestion();
                 }
             }
