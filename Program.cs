@@ -9,10 +9,13 @@ namespace Quest
     {
         static void Main(string[] args)
         {
+            
+            Robe newRobe = new Robe() {Length = 7, Colors = new List<string> {"Red", "Green", "Yellow", "Whatever"} };
 
             // Make a new "Adventurer" object using the "Adventurer" class
             Console.WriteLine("What is your Name?");
-            Adventurer theAdventurer = new Adventurer(Console.ReadLine());
+            Adventurer theAdventurer = new Adventurer(Console.ReadLine(), newRobe);
+            Console.WriteLine(theAdventurer.getDescription());
 
             // Create a few challenges for our Adventurer's quest
             // The "Challenge" Constructor takes three arguments
@@ -87,7 +90,7 @@ namespace Quest
                 // And praises or humiliates them accordingly
                 if (theAdventurer.Awesomeness >= maxAwesomeness)
                 {
-                    Console.WriteLine("YOU DID IT! You are truly awesome!");\
+                    Console.WriteLine("YOU DID IT! You are truly awesome!");
                     playAgainQuestion();
                 }
                 else if (theAdventurer.Awesomeness <= minAwesomeness)
@@ -105,7 +108,7 @@ namespace Quest
 
             challengeAsker();
             
-            
+
         }
     }
 }
