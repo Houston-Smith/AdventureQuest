@@ -11,10 +11,11 @@ namespace Quest
         {
             
             Robe newRobe = new Robe() {Length = 7, Colors = new List<string> {"Red", "Green", "Yellow", "Whatever"} };
+            Hat newHat = new Hat() {ShininessLevel = 6};
 
             // Make a new "Adventurer" object using the "Adventurer" class
             Console.WriteLine("What is your Name?");
-            Adventurer theAdventurer = new Adventurer(Console.ReadLine(), newRobe);
+            Adventurer theAdventurer = new Adventurer(Console.ReadLine(), newRobe, newHat);
             Console.WriteLine(theAdventurer.getDescription());
 
             // Create a few challenges for our Adventurer's quest
